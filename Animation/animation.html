@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            transition: 3s;
+            background-color: red;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        #translate:hover{
+            -webkit-transform: translate(100px,100px);
+            -ms-transform: translate(100px,100px);
+            -moz-transform: translate(100px,100px);
+            -o-transform: translate(100px,100px);
+            transform: translate(100px,100px);
+            color: white;
+            background-color: blue;
+        }
+        #box_shadow:hover{
+            box-shadow: 0px 0px 20px black;
+        }
+        #text_shadow:hover{
+            text-shadow: 2px 2px 2px white;
+        }
+        #skew:hover{
+            -webkit-transform: skew(45deg);
+            -ms-transform: skew(45deg);
+            -moz-transform: skew(45deg);
+            -o-transform: skew(45deg);
+            transform: skew(45deg);
+            color: white;
+            background-color: blue;
+        }
+        #scale:hover{
+            -webkit-transform: scale(1.5,0.5);
+            -ms-transform: scale(1.5,0.5);
+            -moz-transform: scale(1.5,0.5);
+            -o-transform: scale(1.5,0.5);
+            transform: scale(1.5,0.5);
+            color: white;
+            background-color: black;
+        }
+        #rotate:hover{
+            -webkit-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+            color: white;
+            background-color: black;
+        }
+        #rotate3d:hover{
+            -webkit-transform: rotate3d(1,1,0,360deg);
+            -ms-transform: rotate3d(1,1,0,360deg);
+            -moz-transform: rotate3d(1,1,0,360deg);
+            -o-transform: rotate3d(1,1,0,360deg);
+            transform: rotate3d(1,1,0,360deg);
+            color: white;
+            background-color: black;
+        }
+        #opacity:hover{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="translate">Translate</div><hr />
+    <div id="box_shadow">Box Shadow</div><hr />
+    <div id="text_shadow">Text Shadow</div><hr />
+    <div id="skew">Skew</div><hr />
+    <div id="scale">Scale</div><hr />
+    <div id="rotate">Rotate</div><hr />
+    <div id="rotate3d">Rotate3D</div><hr />
+    <div id="opacity">Opacity</div><hr />
+</body>
+</html>
