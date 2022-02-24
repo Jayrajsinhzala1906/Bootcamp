@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade_In And Fade_Out</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javaScript"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn_fade_out").attr("disabled",true);
+
+            $("#btn_fade_in").click(function(){
+                if(confirm("Are you sure...?")){
+                    $("#divBlue").fadeIn(1000);
+                    $("#divGreen").fadeIn(2000);
+                    $("#divRed").fadeIn(3000);
+                    $("#btn_fade_out").attr("disabled",false);
+                    $(this).attr("disabled",true);
+                }
+            })
+            $("#btn_fade_out").click(function(){
+                if(confirm("Are you sure...?")){
+                    $("#divBlue").fadeOut(1000);
+                    $("#divGreen").fadeOut(2000);
+                    $("#divRed").fadeOut(3000);
+                    $("#btn_fade_in").attr("disabled",false);
+                    $(this).attr("disabled",true);
+                }
+            })
+            $("#Btn_fade_toggle").click(function(){
+					if(confirm("Are You Sure..??"))
+					{
+						$("#divBlue").fadeToggle(1000);
+						$("#divGreen").fadeToggle(2000);
+						$("#divRed").fadeToggle(3000);
+					}
+				});
+
+        })
+    </script>
+</head>
+<body>
+    <button id="btn_fade_in">Fade In</button>
+    <button id="btn_fade_out">Fade Out</button>
+    <button id="Btn_fade_toggle">Fade In/Out Toggle</button>
+    <div style="height: 100px;width: 100px;display: none; background-color: blue;" id="divBlue"></div><br>
+    <div style="height: 100px;width: 100px;display: none; background-color: green;" id="divGreen"></div><br>
+    <div style="height: 100px;width: 100px;display: none; background-color: red;" id="divRed"></div><br>
+</body>
+</html>
