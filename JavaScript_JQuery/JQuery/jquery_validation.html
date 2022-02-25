@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form in JQuery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var $FNameLNameRegEx = /^([a-zA-Z]{2,20})$/;
+        var $ConNoRegEx = /^([0-9]{10})$/;
+        var $EmailIdRegEx = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,8}\b$/i;
+
+        $(document).ready(function(){
+            var txtNameFlag = false
+            var txtContactFlag = false
+            var txtEmailFlag = false
+            var txtMessageFlag = false
+
+            $("#txtName").blur(function(){
+                ($(this).val()=="" || $(this).val()==null)?($("#txtNameValidate").html("* Name is Required"),txtNameFlag=false):((!$(this).val().match($FNameLNameRegEx))?($("#txtNameValidate").html("Invalid Input"),txtNameFlag=false):(txtNameFlag=true))
+            })
+            $("#txtContact").blur(function(){
+                ($(this).val()=="" || $(this).val()==null)?($("#txtContactValidate").html("* Contact is Required"),txtContactFlag=false):((!$(this).val().match($ConNoRegEx))?($("#txtContactValidate").html("Invalid Input"),txtContactFlag=false):(txtContactFlag=true))
+            })
+            $("#txtEmail").blur(function(){
+                ($(this).val()=="" || $(this).val()==null)?($("#txtEmailValidate").html("* Email Id is Required"),txtEmailFlag=false):((!$(this).val().match($EmailIdRegEx))?($("#txtEmailValidate").html("Invalid Input"),txtEmailFlag=false):(txtEmailFlag=true))
+            })
+            $("#txtMessage").blur(function(){
+                ($(this).val()=="" || $(this).val()==null)?($("#txtMessageValidate").html("* Message is Required"),txtMessageFlag=false):((!$(this).val()>=800)?($("#txtMessageValidate").html("Invalid Input"),txtMessageFlag=false):(txtMessageFlag=true))
+            })
+
+            $("#btnSubmit").click(function(){
+                $("#txtNameValidate").empty();
+                ($("#txtName").val()=="" || $("#txtName").val()==null)
+                ?($("#txtNameValidate").html("* Name is Required"),txtNameFlag=false)
+                :((!$("#txtName").val().match($FNameLNameRegEx))?($("#txtNameValidate").html("Invalid Input"),txtNameFlag=false):(txtNameFlag=true));
+
+                $("#txtContactValidate").empty();
+                ($("#txtContact").val()=="" || $("#txtContact").val()==null)?($("#txtContactValidate").html("* Contact is Required"),txtContactFlag=false):((!$("#txtContact").val().match($ConNoRegEx))?($("#txtContactValidate").html("Invalid Input"),txtContactFlag=false):(txtContactFlag=true));
+
+                $("#txtEmailValidate").empty();
+                ($("#txtEmail").val()=="" || $("#txtEmail").val()==null)?($("#txtEmailValidate").html("* Email Id is Required"),txtEmailFlag=false):((!$("#txtEmail").val().match($EmailIdRegEx))?($("#txtEmailValidate").html("Invalid Input"),txtEmailFlag=false):(txtEmailFlag=true));
+
+                $("#txtMessageValidate").empty();
+                ($("#txtMessage").val()=="" || $("#txtMessage").val()==null)?($("#txtMessageValidate").html("* Message is Required"),txtMessageFlag=false):((!$("#txtMessage").val()>=800)?($("#txtMessageValidate").html("Invalid Input"),txtMessageFlag=false):(txtMessageFlag=true));
+
+                (txtNameFlag==true && txtContactFlag==true && txtEmailFlag==true && txtMessageFlag==true)?(alert("form is submitted")):(alert("something went wrong"));
+            
+            })
+            $("#txtContact").keypress(function(e){
+					$("#txtContactValidate").empty();
+					var Flag=false;
+					(e.which>=48 && e.which<=57)
+					?Flag=true
+					:(Flag=false,$("#txtContactValidate").html("(*) Invalid contact no..!!"));
+					return Flag;
+            });
+            $("#txtName").keypress(function(e){
+                $("#txtNameValidate").empty();
+                var Flag=false;
+                ((e.which>=65 && e.which<=90) || (e.which>=92 && e.which<=121))
+                ?Flag=true
+                :(Flag=false,$("#txtNameValidate").html("(*) Invalid name..!!"));
+                return Flag;
+            });
+
+
+        })
+    </script>
+    <style type="text/css">
+        small{color:red;}
+    </style>
+</head>
+<body>
+    <input type="text" id="txtName" placeholder="Enter Your Name"><br>
+    <small id="txtNameValidate"></small>
+    <hr/>
+    <input type="text" id="txtContact" placeholder="Enter Your Contact Number"><br>
+    <small id="txtContactValidate"></small>
+    <hr/>
+    <input type="text" id="txtEmail" placeholder="Enter Your Email Id"><br>
+    <small id="txtEmailValidate"></small>
+    <hr/>
+    <textarea id="txtMessage" rows="4" placeholder="Enter Message "></textarea><br>
+    <small id="txtMessageValidate"></small>
+    <hr/>
+    <button id="btnSubmit">Submit</button>
+    
+
+</body>
+</html>
