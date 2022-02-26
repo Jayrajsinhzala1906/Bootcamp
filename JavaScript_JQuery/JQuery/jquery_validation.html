@@ -33,9 +33,7 @@
 
             $("#btnSubmit").click(function(){
                 $("#txtNameValidate").empty();
-                ($("#txtName").val()=="" || $("#txtName").val()==null)
-                ?($("#txtNameValidate").html("* Name is Required"),txtNameFlag=false)
-                :((!$("#txtName").val().match($FNameLNameRegEx))?($("#txtNameValidate").html("Invalid Input"),txtNameFlag=false):(txtNameFlag=true));
+                ($("#txtName").val()=="" || $("#txtName").val()==null)?($("#txtNameValidate").html("* Name is Required"),txtNameFlag=false):((!$("#txtName").val().match($FNameLNameRegEx))?($("#txtNameValidate").html("Invalid Input"),txtNameFlag=false):(txtNameFlag=true));
 
                 $("#txtContactValidate").empty();
                 ($("#txtContact").val()=="" || $("#txtContact").val()==null)?($("#txtContactValidate").html("* Contact is Required"),txtContactFlag=false):((!$("#txtContact").val().match($ConNoRegEx))?($("#txtContactValidate").html("Invalid Input"),txtContactFlag=false):(txtContactFlag=true));
