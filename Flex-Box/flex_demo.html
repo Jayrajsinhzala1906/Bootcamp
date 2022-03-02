@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Box Demo</title>
+    <style type="text/css">
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        h2{
+
+            margin-top: 10px;
+        }
+        .only_flex{
+            border: 4px solid black;
+            display: flex;
+        }
+        .inline_flex{
+            border: 4px solid black;
+            display: inline-flex;
+        }
+        .direction_flex{
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .wrap_row{
+            border: 4px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .wrap_column{
+            border: 4px solid black;
+            display: flex;
+            height: 150px;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+        }
+        .flow_row{
+            border: 4px solid black;
+            display: flex;
+            flex-flow: row-reverse;
+        }
+        .flow_column{
+            border: 4px solid black;
+            display: flex;
+            flex-flow: column-reverse;
+        }
+        .justify_content_row{
+            border: 4px solid black;
+            display: flex;
+            justify-content: space-between;
+        }
+        .justify_content_column{
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            justify-content: space-between;
+        }
+        .align_items_row{
+            border: 4px solid black;
+            display: flex;
+            align-items: center;
+            height: 100px;
+        }
+        .align_items_column{
+            border: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            
+        }
+        .align_content_row{
+            border: 4px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            height: 100px;
+        }
+        .align_content_column{
+            border: 4px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            
+        }
+        .item_order{
+            border: 4px solid black;
+            display: flex;
+        }
+        .item_grow{
+            border: 4px solid black;
+            display: flex;
+        }
+        .item_shrink{
+            border: 4px solid black;
+            display: flex;
+        }
+        .item_basis{
+            border: 4px solid black;
+            display: flex;
+        }
+        .item{
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 0.25rem;
+        }
+
+        .item-1 {
+        background-color:#DDA0DD;
+        }
+
+        .item-2 {
+        background-color:#BF94E4;
+        }
+
+        .item-3 {
+        background-color:#734F96;
+        }
+
+        .item-4 {
+        background-color:#FBAED2;
+        }
+
+        .item-5 {
+        background-color:#EE82EE;
+        }
+
+        .item-6 {
+        background-color:#ADE4CA;
+        }
+
+        .item-7 {
+        background-color:#A6D5AE;
+        }
+
+        .item-8 {
+        background-color:#8FBC8E;
+        }
+
+        .item-9 {
+        background-color: #64A466;
+        }
+
+        .item-10 {
+        background-color:#2E8B56;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Display Flex</h2>
+    <div class="only_flex">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Display Inline Flex</h2>
+    <div class="inline_flex">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Flex Direction Column</h2>
+    <div class="direction_flex">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Flex Wrap Row</h2>
+    <div class="wrap_row">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Flex Wrap column</h2>
+    <div class="wrap_column">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Flex Flow row</h2>
+    <div class="flow_row">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>Flex Flow column</h2>
+    <div class="flow_column">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>justify content row</h2>
+    <div class="justify_content_row">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>justify content column</h2>
+    <div class="justify_content_column">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>align items row</h2>
+    <div class="align_items_row">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>align items column</h2>
+    <div class="align_items_column">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;padding-right: 5rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>align content row</h2>
+    <div class="align_content_row">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>align content column</h2>
+    <div class="align_content_column">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>item Order</h2>
+    <div class="item_order">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4" style="order: 2;">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>item Grow</h2>
+    <div class="item_grow">
+        <div class="item item-1" style="padding-bottom: 1rem;">item-1</div>
+        <div class="item item-2" style="padding-bottom: 2rem;">item-2</div>
+        <div class="item item-3" style="font-size: 3rem;">item-3</div>
+        <div class="item item-4" style="flex-grow: 2;">item-4</div>
+        <div class="item item-5">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+
+    <h2>item Shrink</h2>
+    <div class="item_shrink">
+        <div class="item item-1" style="width: 200px;">item-1</div>
+        <div class="item item-2" style="width: 200px;">item-2</div>
+        <div class="item item-3" style="width: 200px;">item-3</div>
+        <div class="item item-4" style="width: 200px;">item-4</div>
+        <div class="item item-5" style="width: 200px;flex-shrink: 4;">item-5</div>
+        <div class="item item-6" style="width: 200px;">item-6</div>
+        <div class="item item-7" style="width: 200px;">item-7</div>
+        <div class="item item-8" style="width: 200px;">item-8</div>
+        <div class="item item-9" style="width: 200px;">item-9</div>
+        <div class="item item-10" style="width: 200px;">item-10</div>
+    </div>
+
+    <h2>item Basis</h2>
+    <div class="item_basis">
+        <div class="item item-1">item-1</div>
+        <div class="item item-2">item-2</div>
+        <div class="item item-3">item-3</div>
+        <div class="item item-4">item-4</div>
+        <div class="item item-5" style="flex-basis: 25%;">item-5</div>
+        <div class="item item-6">item-6</div>
+        <div class="item item-7">item-7</div>
+        <div class="item item-8">item-8</div>
+        <div class="item item-9" style="flex-basis: 300px;">item-9</div>
+        <div class="item item-10">item-10</div>
+    </div>
+</body>
+</html>
